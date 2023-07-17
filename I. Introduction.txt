@@ -1,0 +1,96 @@
+I. Introduction:
+=================
+0. Introduce yourself.
+1. * Tell me about Python?
+2. Why Python is so popular now a days?
+3. * Features of Python
+4. * Advantages and Disadvantages of Python 
+5. Interpreted vs Compiled time programming languages. Explain in detail
+6. * .py vs .pyc files 
+7. * How compilation will happen internally. Explain in detail 
+8. * Why Python is Dynamically typed programming Language. Explain 
+9. Python is Platform independent.Explain
+10.Different ways to write python program.
+   Interactive, IDLE, CommandPrompt, IDE 
+   Advantages, Disadvantages
+11.sourcecode vs bytecode
+12.Register instruction set 
+13.High Level vs Low level programming Language
+14.* Python architecture
+15.* Explain Garbage Collection mechanism in detail.
+
+II. Variables:
+===============
+1. x = 10. Explain in detail for CRUD operations
+2. tokens in Python. Explain all types
+3. Garbage collection. How it works internally
+4. Memory Management in Python 
+5. Dynamically typed programming. Explain examples.
+6. Initializing variable, static,dynamic way 
+7. Assigning value to multiple variables. Explain 
+
+III. IDE PyCharm:
+===================
+1. Different IDEs in market 
+2. Advantages of IDE
+3. Shortcuts in PyCharm (Explain min 10)
+
+IV. Operators:
+===============
+1. Explain in detail about all operators 
+2. == vs is 
+3. and or operators. Explain 2 examples 
+4. Operator precedence.
+5. Subtract 2 numbers and print result program.
+	- Write down all scenarios with different input values 
+
+V. DataTypes Intro:
+====================
+1. Importance of DataTypes.2
+2. Different data types, data structures available in Python
+3. int vs float
+4. Boolean. give all scenarios
+5. 0 vs null
+6. Explain each data type, data structure with real life examples.
+7. CRUD Operations.Give examples for each 
+8. Sequences. Types of sequences. Sequence operations
+9. Explain about below functions and give examples 
+	print()
+	id()
+	type()
+	int()
+	float()
+	complex()
+	bool()	
+	input()
+	
+VI. Keywords:
+=====================
+1. Explain all keywords with examples and areas of usage
+
+VII. Decision Making:
+=====================
+1. What is Decision Making. Explain different scenarios when to go for Decision Making
+2. Give examples for below conditions
+	1. single if : 
+	2. if else:
+	3. if elif else:
+	4. if elif elif else:
+	5. Nested if: 
+3. Prepare Programs for below questions
+	1. Prepare state and assign North South West East 
+	    north = []
+		south = ['Andhra Prades', 'Telangana', 'Karnataka','Tamil Nadu', 'Kerala']
+		west = []
+		east = []
+	2. Prepare dictionary with key as state name and value as "list of districts"
+4. Get employee details(in dict format, empid,name,sal, exp) and update hike for employee with below 
+		If exp is 0 to 2 years - 10% Hike
+				  2 to 5 years - 20% Hike
+				  5 to 8 years - 30% Hike
+				  8+           - No hike
+5. Explain below terms in detail 
+	- Requirement
+	- User Criteria
+	- Validations(Client vs Server)
+6. State vs Behavior . Examples
