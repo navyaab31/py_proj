@@ -141,7 +141,7 @@ if "print" in var:
 else:
     print(eval(var))
 
-'''
+
 # 
 nm = input().split()
 
@@ -155,15 +155,74 @@ for _ in range(n):
     arr.append(list(map(int, input().rstrip().split())))
 
 k = int(input())
-print(arr)
+# print(arr)
 l1=[]
 for i in arr:
-    l1.append(i[1])
+    l1.append(i[k])
 l1.sort()
-print(l1)
+# print(l1)
 l2=[]
-for i in arr:
-    for j in l1:
-        if i[1]==j:
-            l2.append(arr[i])
-print(l2)
+for i in l1:
+    l3=[]
+    for j in arr:
+        if i==j[1]:
+            l3.append(j[0])
+            l3.append(j[1])
+            l3.append(j[2])
+    # print(l3)
+    l2.append(l3)
+            
+print(*l2)
+for i in range(len(l2)):
+    print(l2[i][0],end=" ")
+    print(l2[i][1],end=" ")
+    print(l2[i][2],end=" ")
+    print()
+
+# patern
+thickness=5
+c='H'
+for i in range(thickness):
+    for j in range(thickness+i):
+        if i+j>=thickness-1:
+            print(c,end=" ")
+        else:
+            print("-",end=" ")
+    print()
+for i in range(thickness+1):
+    for j in range(thickness+20):
+        if 2<=j<=6 or 18<=j<=22:
+            print(c,end=" ")
+        else:
+            print("-",end=" ")
+    print()
+for i in range(thickness-2):
+    for j in range(thickness+20):
+        if j>=2:
+            print(c,end=" ")
+        else:
+            print("-",end=" ")
+    print()
+for i in range(thickness+1):
+    for j in range(thickness+20):
+        if 2<=j<=6 or 18<=j<=22:
+            print(c,end=" ")
+        else:
+            print("-",end=" ")
+    print()
+
+for i in range(thickness):
+    for j in range(thickness+20):
+        if j-i>=16 and j+i<=24:
+            print(c,end=" ")
+        else:
+            print("-",end=" ")
+    print()
+
+'''
+n=4
+m=27
+l1=[]
+for i in range(n):
+    print("-"*(2*n+2)+"|"*(1)+"-"*(2*n+2))
+    # print("\n".join(l1))

@@ -1,10 +1,69 @@
 # Python program that takes an input from the user and determines if it is an even number or an odd number.
+"""
+'''
+# REQ:check if user given number is prime or not
+
+state: user given number
+Behavior: check it
+            ==> if is prime or not
+
+Functional Analysis:
+----------------------
+1.user will give number   :STATE
+2. check if it is prime or not   :Behavior
+3. if val%2==0 print "prime" else "not prime"
+
+Technical Analysis:
+---------------------
+1.STATE   : Datatypes/Dtastructures  :user given number   
+2.BEHAVIOR: operators,              :check if it prime or not
+            %  ==     
+            DM, Loops 
+                if <conditon>:
+                    pass
+                else:
+                    pass
+entity  : User
+state   :given number
+behavior:check and print number is prime or not
+
 '''
 n=int(input("enter the number: "))
 if n%2==0:
     print("even number")
 else:
     print("odd number")
+
+'''
+REQ: check the person is minor or adult or citizen.
+
+state: customer given age
+Behavior: print 
+            ==> if age less than 18 -minor
+            ==> if age between 18-65 -adult
+            ==> if age greater than 65 -senior citizen
+
+Functional Analysis:
+----------------------
+1. customer will give age   :STATE
+2. check if age is less than, between, greater than  :Behavior
+3. if age<18 ==>print-minor
+   if 18<=age<=65  ==>print-adult
+   if age>65 ==>print-senior citizen
+
+Technical Analysis:
+---------------------
+1.STATE     :Datatypes/Datastructures   :customer given number
+2.BEHAVIOR  :Operators
+                <= >=
+            DM
+                if <condition>:
+                    pass
+                elif <condition>:
+                    pass
+                elis <condition>:
+                    pass
+'''
 
 # create a program that prompts the user to enter their age. Based on the input, the program should display different messages according to the following conditions:
 
@@ -19,7 +78,34 @@ elif 18<=age<=65:
     print("you are an adult")
 else:
     print("you are a senior citizen")
+'''
+# REQ: Calculates the discount amount for the shopping cart
 
+state: given total amount
+Behavior: calculated discount amount and print it 
+            ==>if total amount >= 100 discount 10%
+            ==>if total amount 50-99.99 discount 5%
+            ==>if total amount < 50 no discount
+
+Functional Analysis:
+----------------------
+1. Given total amount    :STATE
+2. check if it is greater than, between, less than  :Behavior
+3. print discount amount
+
+Technical Analysis:
+----------------------
+1.STATE: Datatypes/Datastrctures    : given total amount
+2.BEHAVIOR: Operators
+            > <= <
+            DM
+            if <condition>:
+                pass
+            elif <condition>:
+                pass
+            elif <condition>:
+                pass
+'''
 # should develop a program that calculates the discount amount for a shopping cart based on the following conditions:
 
 # If the total price is greater than or equal to $100, apply a 10% discount.
@@ -33,7 +119,29 @@ elif 50<=total_price<=99.99:
     print(total_price+(total_price*0.1))
 else:
     print("no discount is applied")
+'''
+REQ:simulate simple quiz, keep track of their score
 
+state: answer to the question
+Behavior: check answer is correct or not
+            ==>print score in percentage
+
+Functional Analysis:
+----------------------
+1.user will answer to the question  :STATE
+2.check that answer is correct or not  :Behavior
+3. if correct add the marks ==>print score
+
+Technical Analysis:
+---------------------
+1.STATE: Datatypes/Datastructures  :user gives answer
+2.BEHAVIOR: Operators
+             + =
+            DM
+                if <condition>:
+                    pass
+                    add the marks
+'''
 # 4.create a program that simulates a simple quiz. The program should present a series of multiple-choice questions to the user 
 # and keep track of their score. 
 # At the end of the quiz, display the user's score as a percentage.
@@ -64,7 +172,33 @@ if ans4==2:
     score+=1
 print("total percentage is: ",(score/4)*100)
 
+'''
+# REQ: Guess the random number
 
+state: user will guess the number
+behavior: check if guessed number is equals to random number or not
+            ==>if it is correct guess print==>guess is correct
+
+Functional Analysis:
+---------------------
+1. customer will the number   :STATE
+2. chech that number is correct or not   :Behavior
+3.if it correct ==>print guess is correct
+            else==>mention it is far or near
+
+Technical Analysis:
+----------------------
+1.STATE: Datatypes/Datastructures    :customer enter guessed number
+2.BEHAVIOR: Operators
+                == > <
+            DM 
+                if r==g:
+                    pass
+                elif <condition>:
+                    pass
+                elif:
+                    pass
+'''
 # 5.create a program that generates a random number between 1 and 100. 
 # The user should guess the number, and the program should provide feedback on whether the guess is too high or too low. 
 # The program should continue until the user guesses the correct number.
@@ -81,7 +215,32 @@ while True:
         print("correct")
         break
     # print(n)
+'''
+# REQ:print sum of given number, if values are equals print 3*sum
 
+State: User enter the three number
+Behavior: check if numbers or equal or not
+        ==>if equals print-3*sum
+        ==>else print-sum
+
+Functional Analysis:
+----------------------
+1. user will enter the three number  :STATE
+2. check if the three numbers are equals nor not   :Behavior
+3. if equals ==>print 3*sum
+        else:==>print sum
+
+Technical Analysis:
+---------------------
+1.STATE: Datatypes/Datastructures     :given three numbers
+2. BEHAVIOR: Operators
+                + == =
+            DM
+                if n1==n2==n3:
+                    pass
+                else:
+                    pass
+'''
 # 6. Calculate the sum of three given numbers, if the values are equal then return thrice of their sum
 num1=int(input("enter the first number: "))
 num2=int(input("enter the second number: "))
@@ -91,7 +250,39 @@ if num1==num2==num3:
 else:
     print("sum is: ",num1+num2+num3)
 
+'''
+REQ:chech the number is singal,two ,or three number
 
+state: user enter a number
+Beahvior: count the digits in number
+            ==>print singal,two,three digit number
+
+Functional Analysis:
+----------------------
+1. user will enter a number
+2. chech if the number is single,two,three digit number
+3. if it is single digit==> print singal digit number
+            two digit==>print two digit number
+            three digit==>print three digit number
+
+Technical Analysis:
+---------------------
+1. STATE: Datatypes/DataStructures   :user enter the number
+2. BEHAVIOR: Operators
+                == % // +
+            DM
+                if elif
+            Loop
+                while
+            while <condtion>:
+                pass
+            if <condition>:
+                pass
+            elif <condition>:
+                pass
+            elif <condition>:
+                pass
+'''
 # 7. Python program to test whether a number is within 100 of 1000 or 2000.
 n=int(input("enter the numner: "))
 count=0
@@ -109,20 +300,98 @@ elif count==3:
 elif count==4:
     print("it's a 4 digit number")
 
+'''
+# REQ: given list count the specified number
 
+state: given list and specified number
+Behavior: check if the number is in list or not
+        ==> print if it present in the list
 
+Functional Analysis:
+-----------------------
+1. user enter the list and the number
+2. check if the number is in list
+3. if present 
+    ==>print number
+
+Technical Analysis:
+---------------------
+1. STATE   :Datatypes/Datastrucutre   :user enter list and number
+2. BEHAVIOR:Operators
+            =
+            DM 
+                if <condition>:
+                    pass
+                else:
+                    pass
+            Loops:
+                for var in range():
+                    if <condition>:
+                        PASS
+                
+'''
 # 8. Python program to count the number 4 in a given list.
 l1=[2,3,4,5,6,7]
+count=0
 for i in range(len(l1)):
     if l1[i]==4:
-        print(f"number: {l1[i]}  index: {i}")
+        count+=1
+        print(f"number: {l1[i]}  index: {i} count: {count}")
+'''
+# REQ: test passed letter is vowel or not
 
+state: user will enter the letter
+Behavior: check if that number is vowel or not
+        ==>if it is vowel, print vowel
+
+Functional Analysis:
+----------------------
+1. user will enter the letter   :State
+2. check if it is vowel or nor   :Behavior
+3. if it is vowel ==> print its vowel
+
+Technical Analysis:
+-----------------------
+1. STATE: Datatypes/Datastructure   :user entered letter
+2. BEHAVIOR: Operators              :check if letter is vowel or not
+                == in
+            DM
+                if <condition>:
+                    pass
+                else:
+                    pass
+
+'''
 # 9.Python program to test whether a passed letter is a vowel or not
 n=input("enter the letter: ")
 if n in ['a','e','i','o','u']:
     print("it's vowel")
 else:
     print("not vowel")
+
+'''
+REQ: check their age and determines if they are eligible to vote or not
+
+state: user enter the age
+behavior: check age if it is greater than 21
+            ==>print eligible
+
+Functional Behavior:
+1. user will enter the age          :STATE
+2. check if age is greater than 21  :Behavior
+3. if age>=21 print==> eligible
+
+Technical Analysis:
+1.STATE: Datatypes/Datastructure        :user enter the age
+2.BEHAVIOR: Operators
+                >=
+            DM
+                if <condition>:
+                        pass
+                else:
+                    pass
+
+'''
 
 # 10. Voting Eligibility
 # Description: Write a program that prompts the user to enter their age and determines if they are eligible to vote or not.
@@ -134,7 +403,31 @@ if age<18:
     print("not eligible to vote")
 else:
     print("you are eligible to vote")
+'''
+REQ: check leap year or not
 
+state: user enter year
+Behavior: check if it is leap year or not
+            ==>print leap year or not
+
+Functional Analysis:
+------------------------
+1.user will enters the year         :state
+2.check if it is leap year or not   :behavior
+3. if year==leap ==>print it
+
+Technical Analysis:
+----------------------
+1.STATE: Datatypes/Datastructure        :user enter the year
+2.BEHAVIOR: Operators                   :check year is leap year or not
+                % == !=
+            DM
+                if <condition>:
+                    pass
+                else:
+                    pass
+
+'''
 
 # 11. Leap Year Checker
 # Description: Create a program that checks if a given year is a leap year or not.
@@ -384,4 +677,5 @@ elif userinput==scenario[1]:
     print("flee")
 else:
     print("you didn't choice anything...")
-        '''
+        
+"""

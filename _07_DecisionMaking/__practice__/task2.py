@@ -155,7 +155,7 @@ if n==sum:
 else:
     print("False")
 
-
+'''
 # 10. Prime Factors:
 # Description: Write a program that prints all the prime factors of a given number.
 # Example:
@@ -172,7 +172,7 @@ while (i<=n):
         if c==2:
             print(i)
     i+=1
-
+'''
 #11. Calculate GCD:
 # Description: Write a program to calculate the greatest common divisor (GCD) of two given numbers.
 # Example:
