@@ -110,20 +110,27 @@ print(wrap_text)
 
 # text=textwrap.shorten(text=string,width=4)
 # print(text)
-
+'''
 
 n=int(input())
-
+l1=[]
 for i in range(1,n+1):
     oct=0
     p=0
+    # l1=[]
     while i>0:
         rem=n%8
         oct=rem*10**p+oct
+        print(oct)
+        oct1=oct
         i//=8
         p+=1
-    print(oct)
+        print(oct1)
+    l1.append(oct1)
+    oct1=0
+print(l1)
 
+'''
 # 
 
 x = int(input())
@@ -220,9 +227,3 @@ for i in range(thickness):
     print()
 
 '''
-n=4
-m=27
-l1=[]
-for i in range(n):
-    print("-"*(2*n+2)+"|"*(1)+"-"*(2*n+2))
-    # print("\n".join(l1))
