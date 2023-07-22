@@ -114,22 +114,35 @@ print(wrap_text)
 
 n=int(input())
 l1=[]
+l2=[]
+l3=[]
 for i in range(1,n+1):
     oct=0
     p=0
-    # l1=[]
     while i>0:
-        rem=n%8
+        rem=i%8
         oct=rem*10**p+oct
-        print(oct)
-        oct1=oct
         i//=8
         p+=1
-        print(oct1)
-    l1.append(oct1)
-    oct1=0
-print(l1)
+    l1.append(oct)
+for j in range(1,n+1):
+    bin=0
+    p=0
+    while j>0:
+        rem=j%2
+        # print(rem)
+        bin=rem*10**p+bin
+        # print(bin)
+        j//=2
+        p+=1
+    l2.append(bin)
 
+    l3.append(bin)
+# print(*l1,sep="\n")
+# print(*l2,sep="\n")
+sp=" "*4
+res = "\n".join("{} {} {}".format(x,sp, y) for x, y in zip(l1, l2))
+print(res)
 '''
 # 
 

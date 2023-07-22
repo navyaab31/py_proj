@@ -156,7 +156,7 @@ for i in range(1,31):
     l1.append(i*i)
 print(l1[6:7:]+l1[-1::])
 
-'''
+
 # 18. All permutations of list elements
 
 
@@ -164,4 +164,210 @@ print(l1[6:7:]+l1[-1::])
 
 # 19. Difference betweeen 2 lists
 l1=["abc",'xy','mno','op']
-l2=['']
+l2=['abc','xy','op']
+diff=set(l1).difference(set(l2))
+print(list(diff))
+
+# or
+l3=[]
+for i in l1:
+    if i not in l2:
+        l3.append(i)
+print(l3)
+
+# 20. To access index of list
+l1=["abc",'xy','mno','op']
+n=int(input())
+for i in range(len(l1)):
+    if i==n:
+        print(f"{i}:{l1[i]}")
+
+
+# 21. List of characters into string
+l1=['p','y','t','h','o','n']
+print("".join(l1))
+
+# or 
+s=""
+for i in l1:
+    s+=i
+print(s)
+
+
+# 22. Finding index of an item in specified list
+l1=['p','y','t','h','o','n']
+n=input("enter the item: ")
+for i in range(len(l1)):
+    if l1[i]==n:
+        print(f"{l1[i]}:{i}")
+
+
+# 23. Flatten a shallow
+l1=[[2,4,3],[1,5,6], [9], [7,9,0]]
+l2=[]
+for i in l1:
+    for j in i:
+        l2.append(j)
+print(l2)
+
+
+# 24. Append a list to second list
+l1=[2,3,4,5,6]
+l2=['ab','xy','mn']
+for i in l2:
+    l1.append(i)
+print(l1)
+
+
+# 25. Select an item randomly
+import random
+l=[10,20,30,40,50,60,20,30,50,70,90]
+l=set(l)
+l1=random.choice(list(l))
+print(l1)
+
+# or 
+l1=random.sample(list(l),3)
+print(list(l1))
+
+
+# 26. Check circularly identical in two lists
+l1=[10,10,0,0,10]
+l2=[10,10,10,0,0]
+l3=l1+l1
+for i in range(len(l1)):
+    z=0
+    for j in range(i,i+len(l1)):
+        if l2[z]==l3[j]:
+            z+=1
+        else:
+            break
+if z==len(l1):
+    print("True")
+else:
+    print("False")
+        
+
+# 27. Finding a second smallest number
+l1=[2,3,4,5,6,7,8,9]
+for i in range(len(l1)-1):
+    if l1[i]>l1[i+1]:
+        l1[i],l1[i+1]=l1[i+1],l1[i]
+print(l1[1])
+
+
+# 28. Finding a second largest number
+l1=[4,6,2,1,8,5]
+for i in range(len(l1)-1):
+    if l1[i]<l1[i+1]:
+        l1[i],l1[i+1]=l1[i+1],l1[i]
+print(l1[-2])
+
+
+# 29. Get unique values
+l1=[20,40,60,10,20,80,70,40,10]
+l2=[]
+for i in l1:
+    if i not in l2:
+        l2.append(i)
+print(l2)
+
+# 30. Frequency of elements
+l1=[1,2,5,6,8,9,7,6,4,5,3,2,1,3]
+count=0
+n=int(input("enter the val: "))
+for i in l1:
+    if i==n:
+        count+=1
+print(f"frequency of {n}:{count}")
+
+# 31. Counting number elements within a specified ranges
+l1=[1,2,3,4,5,6,7,8,9,2,3,4,7,8,9]
+nm=input("enter the range: ").split()
+n=int(nm[0])
+m=int(nm[1])
+print(m)
+count=0
+for i in range(n,m+1):
+    count+=1
+print("number of elements in range: ",count)
+
+
+# 32. Check a list contains sublist
+l1=[1,2,3,4,5,6,7,8,9]
+l2=[4,5,7]
+for i in range(len(l1)):
+    if l1[i]==l2[0]:
+        n=1
+        while(n<len(l2) and l1[i+n]==l2[n]):
+            n+=1
+        if n==len(l2):
+            print("True")
+            break
+else:
+    print("False")
+
+# 33. Printing elements in ascending order
+l1=[2,5,3,7,8,1,4]
+l1.sort()
+print(l1)
+
+# or 
+for i in range(len(l1)-1):
+    if l1[1]>l1[i+1]:
+        l1[i],l1[i+1]=l1[i+1],l1[i]
+print(l1)
+
+
+# 34. Create a list by concatenating a given list which range goes from 1 to n
+r=input("enter the range: ").split()
+r1=int(r[0])
+r2=int(r[1])
+l1=[]
+for i in range(r1,r2+1):
+    l1.append(i)
+print(l1)
+
+
+# 35. Variable unique identification number
+
+
+# 36. Finding common items from two lists
+l1=[1,2,3,4,5,6]
+l2=[9,8,7,6,5]
+l3=[]
+for i in l1:
+    if i in l2:
+        l3.append(i)
+print(l3)
+
+# 37. Change the position of every nth value with (n+1)th value
+l1=[0,1,2,3,4,5]
+for i in range(0,len(l1),2):
+    l1[i],l1[i+1]=l1[i+1],l1[i]
+print(l1)
+
+# 38. Converting multiple integers into single integer
+l1=[2,3,4,5]
+s=''
+for i in l1:
+    s+=str(i)
+print(s,type(s))
+s1=int(s)
+print(s1,type(s1))
+
+'''
+# 39. Split a list based on first character of word
+# word_list = ['be','have','do','say','get','make','go','know','take','see','come','think',
+#      'look','want','give','use','find','tell','ask','work','seem','feel','leave','call']
+import itertools
+l='aabbbfffghhyysf'
+x=itertools.groupby(l[2])
+for i,j in x:
+    print(i, list(j))
+
+l = ['aaa', 'bbb', 'ccc', 'a', 'b', 'aa', 'bb']
+x=itertools.groupby(l)
+for i,j in x:
+    print(i,list(j))
+print=[(i,list(j)) for i,j in itertools.groupby(l,key=lambda x:x[0])]

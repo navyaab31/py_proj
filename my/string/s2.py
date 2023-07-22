@@ -155,20 +155,23 @@ print("".join(l1+s1))
 # 15.Create html from string
 
 
-
 # 16. Insert string in middle of speical chars
 s=input()
+print(s)
+l1=[]
+for i in s:
+    l1.append(i)
+print(l1)
 insert_str=input("insert string:")
-for i in range(len(s)):
-    if 32<=ord(s[i])<=47 and 32<=ord(s[i+1])<=47:
-        print(s[:i:]+s[i]+insert_str+s[i+1]+s[i+2::])
-# print(s)
+for i in range(len(l1)):
+    if 32<=ord(l1[i])<=47 and 32<=ord(l1[i+1])<=47:
+        l1.insert(i+1,insert_str)
+print("".join(l1))
 
 # 17. 4 Copies of last 2 chars
 s=input("enter the string: ")
 s1=s[-2::]
 print(s1*4)
-
 
 # 18. Length of first 3 Words or last 3 words 
 s="We can use Python loops and conditional statements to generate HTML content.".split()
@@ -281,7 +284,15 @@ print(textwrap.fill(s,width=50))
         
 
 # 27. remove existing indentation from all of the lines in a given text
+import textwrap
+s="""
+    Python is a widely used high-level, general-purpose,
+    interpreted, dynamic programming language. 
+    Its design philosophy emphasizes code"""
 
+print(s)
+s1=textwrap.dedent(s)
+print(s1)
 
 # 28. to add a prefix text to all of the lines in a string
 sample_text ='''
@@ -356,9 +367,13 @@ y = 30000000
 print("{:,}".format(x))
 print(f"{y:,}")
 
-# or 
 
 # 36. to format a number with a percentage
+# num=0.33
+num=2/3
+
+print("percentage of a number is:","{:.2%}".format(num))
+
 
 
 
@@ -530,11 +545,13 @@ for i in s:
     if s.count(i)==1:
         l1.append(i)
 print(l1[0])
-        
+      
 
 # 52. print all permutations with given repetition number of given string
-
-
+import itertools
+s=input("enter the string: ")
+s1=list(itertools.permutations(s,3))
+print(s1)
 
 
 # 53. find the first repeated character in a given string
@@ -691,7 +708,7 @@ for i in s[::-1]:
     l1.append(i[::-1])
 print(l1)
 
-'''
+
 # 67. that accepts a string and calculate the number of digits and letters
 s="12hello67"
 digit_count=0
@@ -702,3 +719,4 @@ for i in s:
     else:
         letter_count+=1
 print(f"digit count:{digit_count}\nletter count:{letter_count}")
+'''
