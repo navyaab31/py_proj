@@ -307,7 +307,18 @@ for i in range(len(l1)):
 else:
     print("False")
 
-# 33. Printing elements in ascending order
+# 33.Generate all sublists
+
+l1=[1,2,3,4,5,6]
+l2=[]
+for i in range(len(l1)+1):
+    for j in range(i):
+        l2.append(l1[j:i])
+print(l2)
+
+
+
+# 34. Printing elements in ascending order
 l1=[2,5,3,7,8,1,4]
 l1.sort()
 print(l1)
@@ -319,7 +330,7 @@ for i in range(len(l1)-1):
 print(l1)
 
 
-# 34. Create a list by concatenating a given list which range goes from 1 to n
+# 35. Create a list by concatenating a given list which range goes from 1 to n
 r=input("enter the range: ").split()
 r1=int(r[0])
 r2=int(r[1])
@@ -329,10 +340,10 @@ for i in range(r1,r2+1):
 print(l1)
 
 
-# 35. Variable unique identification number
+# 36. Variable unique identification number
 
 
-# 36. Finding common items from two lists
+# 37. Finding common items from two lists
 l1=[1,2,3,4,5,6]
 l2=[9,8,7,6,5]
 l3=[]
@@ -341,13 +352,13 @@ for i in l1:
         l3.append(i)
 print(l3)
 
-# 37. Change the position of every nth value with (n+1)th value
+# 38. Change the position of every nth value with (n+1)th value
 l1=[0,1,2,3,4,5]
 for i in range(0,len(l1),2):
     l1[i],l1[i+1]=l1[i+1],l1[i]
 print(l1)
 
-# 38. Converting multiple integers into single integer
+# 39. Converting multiple integers into single integer
 l1=[2,3,4,5]
 s=''
 for i in l1:
@@ -356,18 +367,204 @@ print(s,type(s))
 s1=int(s)
 print(s1,type(s1))
 
-'''
-# 39. Split a list based on first character of word
-# word_list = ['be','have','do','say','get','make','go','know','take','see','come','think',
-#      'look','want','give','use','find','tell','ask','work','seem','feel','leave','call']
+
+# 40. Split a list based on first character of word
+word_list = ['be','string','have','do','done','seem','feel','leave','call','come','say']
+
 import itertools
+"""
 l='aabbbfffghhyysf'
-x=itertools.groupby(l[2])
+x=itertools.groupby(l)
 for i,j in x:
-    print(i, list(j))
+    pass
+    # print(i, list(j))
 
 l = ['aaa', 'bbb', 'ccc', 'a', 'b', 'aa', 'bb']
 x=itertools.groupby(l)
 for i,j in x:
-    print(i,list(j))
-print=[(i,list(j)) for i,j in itertools.groupby(l,key=lambda x:x[0])]
+    # print(i,list(j))
+    pass
+print([(i,list(j)) for i,j in itertools.groupby(l,key=lambda x:x)])
+
+l=[0,2,4,6,8]
+print([(i,list(j)) for i, j in itertools.groupby(l,key=lambda x:x%2==0)]) 
+"""
+# print([(i ,list(j)) for i,j in itertools.groupby(sorted(word_list),key=lambda x:x[0])])
+for i,j in itertools.groupby(sorted(word_list,key=lambda x:x[0])):
+    print(i)
+    for k in j:
+        print(list(k)) 
+
+# 41. Create multiple list
+
+
+
+
+# 42. Find missing and additional values
+list1 = [1, 2, 3, 4, 5, 6] 
+list2 = [4, 5, 6, 7, 8] 
+l1=[]
+l3=[]
+for i in list1:
+    if i not in list2:
+        l1.append(i)
+print(l1)
+# print(l2)
+for j in list2:
+    if j not in list1:
+        l3.append(j)
+print(l3)
+print("additional value in list1:",l1)
+print("missing values in list1:",l3)
+print("additional value in list1:",l3)
+print("missing values in list1:",l1)
+
+# or
+l1=set(list1).difference(set(list2))
+print(list(l1))
+
+l2=set(list2).difference(set(list1))
+print(list(l2))
+
+# 43. Split a list into different variables
+l1=[(1,3,5),(2,4,6),(7,8,9)]
+var1,var2,var3=l1
+print(var1)
+print(var2)
+print(var3)
+
+
+# 44. Generate group of five consecutive numbers in a list
+l1=[]
+n=int(input("enter the number: "))
+for i in range(1,n+1):
+    l1.append(i)
+# print(l2)
+# print(l1)
+l2=[]
+l3=[]
+for j in l1:
+    l2.append(j)
+    if j%5==0 and j!=1:
+        l3.append(l2)
+        l2=[]
+print(l3)
+
+# or
+l2=[] 
+for i in range(5):
+    l1=[]
+    for j in range(1,6):
+        l1.append(5*i+j)
+    l2.append(l1)
+print(l2)
+
+# or 
+l=[[5*i+j for j in range(1,6)] for i in range(5)]
+print(l)
+
+
+#45. Convert a pair of values into a sorted unique array
+L = [(1, 2), (3, 4), (1, 2), (5, 6), (7, 8), (1, 2), (3, 4), (3, 4)]
+l1=[]
+for i in L:
+    for j in i:
+        l1.append(j)
+l2=[]
+for i in l1:
+    if i not in l2:
+        l2.append(i)
+print(sorted(l2)) 
+
+
+# 46. Select odd items of a list
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+l1=[]
+for i in x:
+    if i%2!=0:
+        l1.append(i)
+print(l1)
+
+# 47. Insert an element before each element of a list
+l=[1,2,3,4,5]
+j=0
+for i in l[::]:
+    l.insert(j,'a')
+    j+=2
+print(l)
+
+# or 
+l1=[]
+for ele in range(len(l)):
+    for var in ('c',l[ele]):
+        l1.append(var)
+print(l1)
+
+
+# 48. Print a nested lists (each list on a new line) using the print() function
+l=[['red'],['yellow'],['green']]
+for i in l:
+    for j in i:
+        print(j,sep='\n')
+
+# or 
+for i in l:
+    print(*i)
+    # print('\n'.join(str(i)))
+
+
+# 49. Convert list to list of dictionaries
+k = ['a','b','c','d','e']
+v = [1,2,3,4,5]
+
+# using zip() method
+my_dict={i:j for i, j in zip(k,v)}
+print(my_dict)
+
+# using dictionary comprehension
+my_dict={i:j for i in k for j in v}
+print(my_dict)
+
+# or
+d={}
+for i in k:
+    for j in v:
+        d[i]=j
+print(d)
+
+# 50. Sort a list of nested dictionaries
+my_list = [{'key': {'subkey': 1}}, {'key': {'subkey': 10}}, {'key': {'subkey': 5}}]
+l1=[]
+for i in my_list:
+    print(i)
+    for j,k in i.items():
+        print(k)
+        for key,val in k.items():
+            print(val)
+            l1.append(val)
+print(l1)
+l1.sort(reverse=True)
+print(l1)
+for n in l1:
+    for i in my_list:
+        # print(i)
+        for j,k in i.items():
+            # print(k)
+            for key,val in k.items():
+                # print(val)
+                # l1.append(val)
+                if n==val:
+                    # print("True")
+
+
+# 51. Split a list every Nth element
+l1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b']
+n=int(input())
+l2=[]
+for i in range(0,len(l1),n):
+    print(i)
+    l2.append(l1[i:i+n])
+print(l2)
+
+'''
+# 52. Compute the similarity between two lists

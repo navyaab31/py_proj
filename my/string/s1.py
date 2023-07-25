@@ -137,12 +137,25 @@ for j in range(1,n+1):
         p+=1
     l2.append(bin)
 
-    l3.append(bin)
+    # l3.append(bin)
+for k in range(1,n+1):
+    hex=""
+    p=0
+    while k>0:
+        rem=k%16
+        if rem>9:
+            rem=(chr(rem+55))
+        rem=str(rem)
+        hex+=rem
+        k//=16
+        # P+=1
+    l3.append(hex)
 # print(*l1,sep="\n")
 # print(*l2,sep="\n")
 sp=" "*4
-res = "\n".join("{} {} {}".format(x,sp, y) for x, y in zip(l1, l2))
+res = "\n".join("{} {} {} {} {}".format(x,sp, y, sp, z ) for x, y, z in zip(l1, l2, l3))
 print(res)
+
 '''
 # 
 
