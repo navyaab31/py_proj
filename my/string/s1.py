@@ -110,7 +110,7 @@ print(wrap_text)
 
 # text=textwrap.shorten(text=string,width=4)
 # print(text)
-'''
+
 
 n=int(input())
 l1=[]
@@ -156,7 +156,7 @@ sp=" "*4
 res = "\n".join("{} {} {} {} {}".format(x,sp, y, sp, z ) for x, y, z in zip(l1, l2, l3))
 print(res)
 
-'''
+
 # 
 
 x = int(input())
@@ -249,7 +249,14 @@ for i in range(thickness):
         if j-i>=16 and j+i<=24:
             print(c,end=" ")
         else:
-            print("-",end=" ")
+            print(" ",end=" ")
     print()
 
 '''
+# pattren
+n = int(input("enter the rows: "))
+m = 3*n
+for i in range(n//2):
+    for j in range(m):
+        print("-" * m//(n-i))
+    print()
