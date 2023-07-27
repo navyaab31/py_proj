@@ -25,7 +25,10 @@ for i in s[::-1]:
 
 # 4.Replace first occurance character
 s="Hello World!"
-for i in range(len(s)):
+count=0
+for i in s:
+    count+=1
+for i in range(count):
     if s[i]=='l':
         print(s[:i:]+"a"+s[i+1::])
         break
@@ -36,6 +39,11 @@ print(s.replace('l','a',1))
 
 # 5.Swapping chars in string
 s="Hello World!".split()
+s="Hello World"
+s=[]
+for i in s:
+    s+=[i]
+
 print(s)
 # j=0
 for i in s:
@@ -45,7 +53,6 @@ for i in s:
         if l1[j]=='e':
             l1[j]='l'
 # print(s)
-
 
 # 6.Append chars to string at end
 s="hello"
@@ -57,7 +64,11 @@ print(s2)
 # 7.Substring replacement
 sub="ijk"
 s=input("enter the string: ")
-for i in range(len(s)-2):
+count=0
+for j in s:
+    count+=1
+
+for i in range(count-2):
     if s[i]+s[i+1]+s[i+2]=="ijk":
         print(s[:i:]+"abc"+s[i+3::])
 # print(s)
@@ -83,25 +94,43 @@ for i in d:
 # 9. nth index character from string
 n=int(input())
 s="statements control loop decisionmaking datatypes"
-for i in range(len(s)):
+count=0
+for i in s:
+    count+=1
+for i in range(count):
     if n==i:
         print(s[i])
-    
+  
 # 10.First last chars swapping
 s="statements control loop decisionmaking datatype"
 print(s[-1]+s[1:-1:]+s[0])
 
 # 11.Remove odd index values
 s="hello world"
+count=0
+for i in s:
+    count+=1
 s1=''
-for i in range(len(s)):
+for i in range(count):
     if i%2==0:
         s1+=s[i]
 print(s1)
 
 # 12.Count words in a string
-s="statements control loop decisionmaking datatype".split()
-print(len(s))
+s="statements control loop decisionmaking datatype "
+l1=[]
+s1=''
+for i in s:
+    s1+=i
+    if i==" ":
+      l1+=[s1]
+      s1=' '
+print(l1)
+count=0
+for i in l1:
+   count+=1
+print(count)
+# print(len(s))
 
 # or 
 count=0
@@ -119,15 +148,22 @@ s="Hello World"
 # print(s.swapcase())
 
 # or without using built in function
+count=0
+for i in s:
+    count+=1
 s1=[]
-for i in range(len(s)):
+for i in range(count):
     if "A"<=s[i]<="Z":
         s1.append(chr(ord(s[i])+32))
     elif "a"<=s[i]<="z":
         s1.append(chr(ord(s[i])-32))
     else:
-        s1.append(s[i])
-print("".join(s1))
+        s1+=s[i]
+s=''
+for i in s1:
+    s+=i
+print(s)
+# print("".join(s1))
 
 
 # 14.Sort unique words alphanumerically
@@ -141,10 +177,10 @@ for i in list(s):
         j=int(i)
         # print(type(j))
         if isinstance(j,int):
-            l1.append(str(j))
+            l1+=[str(j)]
             # print(l1)
     else:
-        s1.append(i)
+        s1+=[i]
 l1.sort()
 s1.sort()
 # print(l1)
@@ -160,13 +196,20 @@ s=input()
 print(s)
 l1=[]
 for i in s:
-    l1.append(i)
-print(l1)
+    l1+=[i]
+# print(l1)
+count=0
+for i in l1:
+    count+=1
 insert_str=input("insert string:")
-for i in range(len(l1)):
+for i in range(count):
     if 32<=ord(l1[i])<=47 and 32<=ord(l1[i+1])<=47:
         l1.insert(i+1,insert_str)
-print("".join(l1))
+# print("".join(l1))
+s=''
+for i in l1:
+    s+=i
+print(s)
 
 # 17. 4 Copies of last 2 chars
 s=input("enter the string: ")
@@ -174,10 +217,20 @@ s1=s[-2::]
 print(s1*4)
 
 # 18. Length of first 3 Words or last 3 words 
-s="We can use Python loops and conditional statements to generate HTML content.".split()
-print(s[0])
+s="We can use Python loops and conditional statements to generate HTML content. "
+s_val=[]
+tmp=''
+for i in s:
+    if i==" ":
+        s_val+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(s_val)
 d={}
-for i in s[:3:]:
+for i in s_val[:3:]:
     count=0
     for j in i:
         count+=1
@@ -185,13 +238,35 @@ for i in s[:3:]:
 print(d)
 
 # 19. Last part of string
-s="We can use Python loops and conditional statements to generate HTML".split()
-print(s[-1])
+s="We can use Python loops and conditional statements to generate HTML "
+split_val=[]
+tmp=''
+for i in s:
+    if i==" ":
+        split_val+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+print(split_val)
+print(split_val[-1])
 
 # 20.  reverses a string if it's length is a multiple of 4
-s="We can use Python.. loops and conditional statements".split()
-d={}
+s="We can use Python.. loops and conditional statements "
+split_val=[]
+tmp=''
 for i in s:
+    if i==" ":
+        split_val+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+print(split_val)
+d={}
+for i in split_val:
     count=0
     for j in i:
         count+=1
@@ -202,11 +277,13 @@ for i in d:
     if d[i]%4==0:
         print(i[::-1])
 
-
 # 21. Convert a given string to all uppercase
 s=input("enter the string: ")
+count=0
+for i in s:
+    count+=1
 s1=""
-for i in range(len(s)):
+for i in range(count):
     if "a"<=s[i]<="z":
         s1+=chr(ord(s[i])-32)
     else:
@@ -216,18 +293,34 @@ print(s1)
 
 
 # 22. program to sort a string lexicographically
-s="Coders loves the algorithms".split()
-print(s)
-for i in range(len(s)):
+n="Coders loves the algorithms "
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(s)
+# print(s)
+count=0
+for i in s:
+    count+=1
+for i in range(count):
     # print(s[i][0])
-    for j in range(i+1,len(s)):
+    for j in range(i+1,count):
         # print(s[j][0])
         if s[i][0]>s[j][0]:
             s[i],s[j]=s[j],s[i]
-print("\n".join(s))
+# print("\n".join(s))
+for i in s:
+    print(i)
 
 # or
-s=intpt().split()
+s=input().split()
 sorted(s)
 print("\n".join(s))
 
@@ -245,13 +338,24 @@ for i in s:
 print(s1)
 
 # 24. program to check whether a string starts with specified characters
-s="Remove spaces at the beginning and at the end of the string".split()
-spc_char=input("enter the specific character to remove: ")
+s="Remove spaces at the beginning and at the end of the string "
+split_val=[]
+tmp=''
 for i in s:
+    if i==" ":
+        split_val+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(split_val)
+spc_char=input("enter the specific character: ")
+for i in split_val:
     # print(i)
     if i[0]==spc_char:
         print(i)
-   
+
 # 25. program to create a Caesar encryption
 s="hello"
 s1=""
@@ -265,7 +369,10 @@ s="Python is a widely used high-level, general-purpose, interpreted, dynamic pro
 l1=[]
 count=0
 s1=''
-for i in range(len(s)):
+c=0
+for i in s:
+    c+=1
+for i in range(c):
     
     s1+=s[i]
     # print(s1)
@@ -275,7 +382,10 @@ for i in range(len(s)):
         # print(l1)
         s1=''
 # print(l1)
-print("\n".join(l1))
+# print("\n".join(l1))
+for i in l1:
+    print(i)
+
 
 # or 
 import textwrap
@@ -376,12 +486,16 @@ print("percentage of a number is:","{:.2%}".format(num))
 
 
 
-
 # 37. to display a number in left, right and center aligned of width 10
 x=10
 print(str(x).ljust(10," "))
 print(str(x).rjust(10," "))
 print(str(x).center(10))
+
+# without using built in
+print(str(x)+(" "*10))
+print((" "*10)+str(x))
+print((" "*5)+str(x)+(" "*5))
 
 # 38. to count occurrences of a substring in a string
 s="python is easy to learn hi python how are you"
@@ -399,16 +513,42 @@ print(f"{sub_str}:{count}")
 
 
 # 39. reverse a string
-s="python is easy to learn hi python how are you".split()
-print(" ".join(s[::-1]))
-
+n="python is easy to learn hi python how are you "
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(split_val)
+# print(" ".join(s[::-1]))
+for i in s[::-1]:
+    print(i,end=" ")
 
 # 40. reverse words in a string
-s="python is easy to learn hi python how are you".split()
+n="python is easy to learn hi python how are you "
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(s)
 s1=[]
 for i in s:
-    s1.append(i[::-1])
-print(" ".join(s1))
+    s1+=[i[::-1]]
+# print(" ".join(s1))
+# print(s1)
+for i in s1:
+    print(i,end=" ")
 
 
 # 41. strip a set of characters from a string
@@ -465,12 +605,16 @@ print(flag)
 # 46. convert a string in a list
 s="The quick brown fox jumps over the lazy dog".split()
 print(s)
+
+# or
 s1="hello"
 print(list(s1))
+
+# or
 s2="Hello world"
 l1=[]
 for i in s2:
-    l1.append(i)
+    l1+=[i]
 print(l1)
 
 
@@ -479,14 +623,19 @@ s=input("enter the string: ")
 n=int(input("n: "))
 l1=[]
 count=0
-for i in range(len(s)):
+c=0
+for i in s:
+    c+=1
+for i in range(c):
     count+=1
     if count<=n:
         if "A"<=s[i]<="Z":
             l1.append(chr(ord(s[i])+32))
     else:
         l1.append(s[i])
-print("".join(l1))
+# print("".join(l1))
+for i in l1:
+    print(i,end="")
 
 
 # 48. swap comma and dot in a string
@@ -497,6 +646,14 @@ print(s.translate(m_k))
 # or 
 print(s.replace(',','.'))
 
+# or 
+s1=''
+for i in s:
+    if i==",":
+        s1+="."
+    else:
+        s1+=i
+print(s1)
 
 # 49. count and display the vowels of a given text
 s="hello python"
@@ -536,14 +693,14 @@ print(d)
 l1=[]
 for i in d:
     if d[i]==1:
-        l1.append(i)
+        l1+=[i]
 print(l1[0])
 
 # or
 l1=[]
 for i in s:
     if s.count(i)==1:
-        l1.append(i)
+        l1+=[i]
 print(l1[0])
       
 
@@ -558,8 +715,13 @@ print(s1)
 s="hello python how are you"
 l1=[]
 for i in s:
-    if s.count(i)>1:
-        l1.append(i)
+    c=0
+    for j in s:
+        if i==j:
+            c+=1
+    if c>1:
+        if i not in l1:
+            l1+=[i]
 print(l1[0])
 
 # 54. find the first repeated character of a given string where the index of first occurrence is smallest

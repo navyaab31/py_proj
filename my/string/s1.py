@@ -255,8 +255,10 @@ for i in range(thickness):
 '''
 # pattren
 n = int(input("enter the rows: "))
+print(type(n))
 m = 3*n
-for i in range(n//2):
+print(type(m))
+for i in range(1,n//2):
     for j in range(m):
-        print("-" * m//(n-i))
+        print("-" * (m//(n*i)))
     print()

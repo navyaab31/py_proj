@@ -156,7 +156,6 @@ for i in range(1,31):
     l1.append(i*i)
 print(l1[6:7:]+l1[-1::])
 
-
 # 18. All permutations of list elements
 
 
@@ -371,7 +370,7 @@ print(s1,type(s1))
 # 40. Split a list based on first character of word
 word_list = ['be','string','have','do','done','seem','feel','leave','call','come','say']
 
-import itertools
+# import itertools
 """
 l='aabbbfffghhyysf'
 x=itertools.groupby(l)
@@ -390,10 +389,27 @@ l=[0,2,4,6,8]
 print([(i,list(j)) for i, j in itertools.groupby(l,key=lambda x:x%2==0)]) 
 """
 # print([(i ,list(j)) for i,j in itertools.groupby(sorted(word_list),key=lambda x:x[0])])
+"""
 for i,j in itertools.groupby(sorted(word_list,key=lambda x:x[0])):
     print(i)
     for k in j:
         print(list(k)) 
+"""
+word_list = ['be','string','have','do','done','seem','feel','leave','call','come','say']
+l2=[]
+for i in range(len(word_list)):
+    l1=[]
+    for j in word_list:
+        # print(word_list[i][0])
+        
+        if word_list[i][0]==j[0]:
+            # print(word_list[j][0])
+            # print(word_list[j])
+            l1.append(j)
+            del j
+    if l1 not in l2:
+        l2.append(l1)
+print(l2)
 
 # 41. Create multiple list
 
@@ -469,12 +485,12 @@ L = [(1, 2), (3, 4), (1, 2), (5, 6), (7, 8), (1, 2), (3, 4), (3, 4)]
 l1=[]
 for i in L:
     for j in i:
-        l1.append(j)
+        l1+=[j]
 l2=[]
 for i in l1:
     if i not in l2:
-        l2.append(i)
-print(sorted(l2)) 
+        l2+=[i]
+print(l2) 
 
 
 # 46. Select odd items of a list
@@ -482,8 +498,9 @@ x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 l1=[]
 for i in x:
     if i%2!=0:
-        l1.append(i)
+        l1+=[i]
 print(l1)
+
 
 # 47. Insert an element before each element of a list
 l=[1,2,3,4,5]
@@ -536,25 +553,28 @@ print(d)
 my_list = [{'key': {'subkey': 1}}, {'key': {'subkey': 10}}, {'key': {'subkey': 5}}]
 l1=[]
 for i in my_list:
-    print(i)
+    # print(i)
     for j,k in i.items():
-        print(k)
+        # print(k)
         for key,val in k.items():
-            print(val)
-            l1.append(val)
-print(l1)
-l1.sort(reverse=True)
-print(l1)
+            # print(val)
+            l1=l1+[val]
+# print(l1)
+# l1.sort(reverse=True)
+for i in range(len(l1)-1):
+    if l1[i]<l1[i+1]:
+        l1[i],l1[i+1]=l1[i+1],l1[i]
+
+# print(l1)
+l2=[]
 for n in l1:
     for i in my_list:
-        # print(i)
-        for j,k in i.items():
-            # print(k)
-            for key,val in k.items():
-                # print(val)
-                # l1.append(val)
-                if n==val:
-                    # print("True")
+        for k,j in i.items():
+            for m in j:
+                if j[m]==n:
+                    # print("yes")
+                    l2=l2+[i]
+print(l2)
 
 
 # 51. Split a list every Nth element
@@ -583,15 +603,18 @@ print("similarity {:.2f}%".format(len(l3)/len(l1)*100))
 
 
 # 53. Create a list with infinite elements
-# l1=[]
-# while 1:
-#     n=int(input())
-#     # print(ord(str(n)))
-#     if n:
-#         l1.append(n)
-#     else:
-#         break
-# print(l1)
+l1=[]
+while 1:
+    n=input()
+    # print(ord(n))
+    if ord(n)==32:
+        break
+    # print(ord(str(n)))
+    elif n:
+        l1.append(n)
+    
+print(l1)
+
 
 # 54. Concatenate elements of a list
 l1=[1, 4, 5, 6, 5]
@@ -754,11 +777,113 @@ if flag==True:
 else:
     print("no")
 
-'''
+
 # 68. Extend a list without append
 l1=[10,20,30,40]
 l2=[50,60,70,80]
 print(l1+l2)
+
+# or
+
 for i in l2:
-    l1+[i]
+    l1=l1+[i]
 print(l1)
+
+# or using slicing
+for i in l2:
+    l1[:0]=[i]
+print(l1)
+
+for i in l2:
+    l1[len(l1):]=[i]
+print(l1)
+
+# or by using extend
+l1.extend(l2)
+print(l1)
+
+
+# 69. Remove duplicates from a list of lists
+l1=[1,2,3,5,6,4,7,2,7,8]
+l2=[]
+for i in l1:
+    if i not in l2:
+        l2=l2+[i]
+print(l2)
+
+
+# 70. Get the depth of a dictionary
+d={1:'a', 2: {3: {4: {}}}}
+    
+
+
+# 71. Check if all dictionaries in a list are empty or not
+l1=[{},{},{}]
+l2=[{1:2},{},{}]
+flag=False
+for i in l2:
+    if i:
+        flag=False
+        break
+    else:
+        flag=True
+if flag==True:
+    print("yes")
+else:
+    print("no")
+
+
+# 72. Two digits m (row) and n (column) as input and generates a two-dimensional array. 
+# The element value in the i-th row and j-th column of the array should be i*j
+m=int(input("enter row: "))
+n=int(input("enter column: "))
+for i in range(m):
+    for j in range(n):
+        print(i*j,end=" ")
+    print()
+
+
+# 73. A list contains group of strings.Convert each word to capital letter and print
+l1=['python','loops','list','string','tuples']
+l2=[]
+for i in l1:
+    # print(i)
+    s=''
+    for j in i:
+        if "a"<=j<="z":
+            s+=chr(ord(j)-32)
+        else:
+            s+=j
+    l2.append(s)
+    print(s)
+print(l2)
+
+
+# 74. Reverse list of elements and print in upper case
+l1=["Alice", "Cindy", "Bobby", "Jan", "Peter"]
+l2=[]
+for i in l1[::-1]:
+    s=''
+    for j in i:
+        if "a"<=j<="z":
+            s+=chr(ord(j)-32)
+        else:
+            s+=j
+    l2.append(s)
+    # print(s)
+print(l2)
+
+
+# 75. Write a Python program to convert month name to a number of days
+month_name=input("enter the month: ")
+
+if month_name=="february":
+    print("no. of days: ",28)
+elif month_name in ('april','june','september','november'):
+    print("no. of days:",30)
+elif month_name in ('january','march','may','july','august','octomber'):
+    print("no. of days:",31)
+else:
+    print("wrong month name")
+
+'''

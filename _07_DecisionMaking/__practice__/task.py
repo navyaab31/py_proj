@@ -1,5 +1,5 @@
 # Python program that takes an input from the user and determines if it is an even number or an odd number.
-"""
+
 '''
 # REQ:check if user given number is prime or not
 
@@ -147,28 +147,28 @@ Technical Analysis:
 # At the end of the quiz, display the user's score as a percentage.
 print("Quiz")
 score=0
-print("1.what is ......?")
-print(" 1.abc 2.xyz 3.mno 4.pqr")
+print("1.Which of the following is not valid variable name in Python?")
+print(" 1._var 2.var_name 3.var11 4.11var")
 ans1=int(input("ans: "))
-if ans1==1:
+if ans1==4:
     score+=1
 # print(score)
-print("2.what is ......?")
-print(" 1.abc 2.xyz 3.mno 4.pqr")
+print("2.Which of the following will give error?")
+print(" 1.a=b=c=1 2.a,b,c=1 3.a,b,c=1, python, 1.5 4.None of the above")
 ans2=int(input("ans: "))
-if ans2==3:
+if ans2==2:
     score+=1
 # print(score)
-print("3.what is ......?")
-print(" 1.abc 2.xyz 3.mno 4.pqr")
+print("3.How many keywords are there in python 3.7?")
+print(" 1.32 2.33 3.31 4.30")
 ans3=int(input("ans: "))
 if ans3==2:
     score+=1
 # print(score)
-print("4.what is ......?")
-print(" 1.abc 2.xyz 3.mno 4.pqr")
+print("4.All keyword in python are in.")
+print(" 1.Lowercase 2.Uppercase 3.Both uppercase & Lowercase 4.None of the above")
 ans4=int(input("ans: "))
-if ans4==2: 
+if ans4==3: 
     score+=1
 print("total percentage is: ",(score/4)*100)
 
@@ -678,4 +678,3 @@ elif userinput==scenario[1]:
 else:
     print("you didn't choice anything...")
         
-"""
