@@ -111,7 +111,7 @@ print(wrap_text)
 # text=textwrap.shorten(text=string,width=4)
 # print(text)
 
-
+'''
 n=int(input())
 l1=[]
 l2=[]
@@ -152,11 +152,11 @@ for k in range(1,n+1):
     l3.append(hex)
 # print(*l1,sep="\n")
 # print(*l2,sep="\n")
-sp=" "*4
-res = "\n".join("{} {} {} {} {}".format(x,sp, y, sp, z ) for x, y, z in zip(l1, l2, l3))
+
+res = "\n".join("{:>2}  {:>10}  {:>10}".format(x, y, z ) for x, y, z in zip(l1, l2, l3))
 print(res)
 
-
+'''
 # 
 
 x = int(input())
@@ -252,7 +252,7 @@ for i in range(thickness):
             print(" ",end=" ")
     print()
 
-'''
+
 # pattren
 n = int(input("enter the rows: "))
 print(type(n))
@@ -262,3 +262,4 @@ for i in range(1,n//2):
     for j in range(m):
         print("-" * (m//(n*i)))
     print()
+'''

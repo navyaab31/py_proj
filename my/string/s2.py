@@ -726,24 +726,48 @@ print(l1[0])
 
 # 54. find the first repeated character of a given string where the index of first occurrence is smallest
 s="hello python how are you"
-d=[]
+count=0
 for i in s:
-    if s.count(i)>1:
-        d.append(i)
-print(f"{d[0]},index:{s.index(d[0])}")
-
-
+    count+=1
+ans=''
+index=99
+for i in range(count):
+    tmp=s[i]
+    for j in range(i+1,count):
+        if tmp==s[j]:
+            if j<index:
+                index=j
+                ans=s[j]
+print(ans)
+    
+'''
 # 55. find the first repeated word in a given string
-s="hello python how are you, python is to learn.".split()
+n="hello python how are you, python is to learn "
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# if tmp:
+#     split_val+=[tmp]
+# print(s)
 l1=[]
 print(s)
-for i in set(s):
-    count=s.count(i)
-    if count>1:
-        l1.append(i)
-print(l1[0])
+count=0
+for i in l1:
+    count+=1
+for i in range(count):
+    c=0
+    for j in range(i+1,count):
+        c+=1
+        if c>=1:
+            l1+=[i]
+print(*l1)
 
-
+'''
 # 56. find the second most repeated word in a given string
 s="python string loops Operators string  list set string python list dict python string".split()
 d={}

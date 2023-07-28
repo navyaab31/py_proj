@@ -43,6 +43,18 @@ for i in l1:
 print("Maximum: ",mx)
 print("minimum: ",mn)
 
+# or 
+l1=[2,3,45,6,7,1]
+mn=l1[0]
+mx=l1[0]
+for i in l1:
+    if mn>i:
+        mn=i
+    if mx<i:
+        mx=i
+print("maximum:",mx)
+print("minimum:",mn)
+
 
 # 3. Calculate Average:
 # Description: Write a program that calculates the average of a given list of numbers.
@@ -50,10 +62,13 @@ print("minimum: ",mn)
 # Input: [2, 4, 6, 8]
 # Output: 5.0
 l1=[2,4,6,8,9]
+c=0
+for i in l1:
+    c+=1
 sum=0
 for i in l1:
     sum+=i
-avg=sum/len(l1)
+avg=sum/c
 print("average: ",avg)
 
 
@@ -86,7 +101,7 @@ l1=[1,2,3,2,4,1,5]
 l2=[]
 for i in l1:
     if i not in l2:
-        l2.append(i)
+        l2+=[i]
         # print(l2)
 print(l2)
 
@@ -99,7 +114,7 @@ print(l2)
 l1=[1,2,3,4,5]
 l2=[]
 for i in l1[::-1]:
-    l2.append(i)
+    l2+=[i]
 print(l2)
 
 
@@ -129,7 +144,15 @@ else:
 # Input: "Hello World", ['l', 'o']
 # Output: "He Wrld"
 s=input("enter the string: ")
-remove=input().split()
+n=input()
+remove=[]
+tmp=''
+for i in n:
+    if i==" ":
+        remove+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
 # print(remove)
 s1=" "
 for i in s:
@@ -180,8 +203,12 @@ while (i<=n):
 # Output: 12
 num1=int(input("enter the first number: "))
 num2=int(input("enter the second number: "))
+if num1<num2:
+    mn=num1
+else:
+    mn=num2
 gcd=1
-for i in range(1,min(num1,num2)+1):
+for i in range(1,mn+1):
     if (num1%i==0) and (num2%i==0):
         gcd=i
 print(f"gcd of {num1} and {num2} is {gcd}")
@@ -192,7 +219,16 @@ print(f"gcd of {num1} and {num2} is {gcd}")
 # Example:
 # Input: "Hello, how are you?"
 # Output: 4
-s=input("enter the string: ").split()
+n=input("enter the string: ")
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+# print(remove)
 # print(s)
 count=0
 for i in s:
@@ -210,7 +246,7 @@ l=[]
 for i in l1:
     for j in l2:
         if i==j:
-            l.append(i)
+            l+=[i]
 print(l)
 
 # 14. Square Root:
@@ -286,29 +322,52 @@ else:
 # Example:
 # Input: "hello world"
 # Output: "Hello World"
-s=input("enter the sentence: ").split()
+n=input("enter the sentence: ")
+s=[]
+tmp=''
+for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+print(s)
 # print(s,type(s))
+count=0
+for i in s:
+    count+=1
 l1=[]
-for i in range(len(s)):
+for i in range(count):
     # print(s[i][0])
     var=chr(ord(s[i][:1:])-32)
     var1=var+s[i][1::]
     l1.append(var1)
 
-print(" ".join(l1))       
+# print(" ".join(l1))      
+for i in l1:
+    print(i,end=" ") 
 
 # 18. Word Frequency Counter:
 # Description: Write a program that counts the frequency of each word in a given text.
 # Example:
 # Input: "Hello world. Hello Python Python is awesome."
 # Output: {'Hello': 2, 'world': 1, 'Python': 2, 'is': 1, 'awesome': 1}
-n=input("enter the senctence: ").split()
-print(n)
-d={}
+n=input("enter the senctence: ")
+s=[]
+tmp=''
 for i in n:
+    if i==" ":
+        s+=[tmp]
+        tmp=''
+    else:
+        tmp+=i
+print(s)
+# print(n)
+d={}
+for i in s:
     
     count=0
-    for j in n:
+    for j in s:
         if i==j:
             count+=1
     d[i]=count
@@ -343,7 +402,9 @@ if a==b:
     print("True")
 else:
     print("False")
-    '''
+
+# or
+
 s1="listen"
 s2="silent"
 flag=False
@@ -357,7 +418,7 @@ if flag==True:
 else:
     print("False")
 
-'''
+
 # 20.Matrix Transpose:
 # Description: Write a program that calculates the transpose of a given matrix.
 # Example:
@@ -365,9 +426,12 @@ else:
 # Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 x=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 result=[[0,0,0],[0,0,0],[0,0,0]]
-for i in range(len(x)):
+c=0
+for i in x:
+    c+=1
+for i in range(c):
     # result1=[]
-    for j in range(len(x[i])):
+    for j in range(c):
         result[j][i]=x[i][j]
         # result1.append(x[j][i])
     # print(result1)
