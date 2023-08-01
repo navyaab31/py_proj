@@ -111,7 +111,7 @@ print(wrap_text)
 # text=textwrap.shorten(text=string,width=4)
 # print(text)
 
-'''
+# 
 n=int(input())
 l1=[]
 l2=[]
@@ -156,7 +156,7 @@ for k in range(1,n+1):
 res = "\n".join("{:>2}  {:>10}  {:>10}".format(x, y, z ) for x, y, z in zip(l1, l2, l3))
 print(res)
 
-'''
+
 # 
 
 x = int(input())
@@ -255,11 +255,17 @@ for i in range(thickness):
 
 # pattren
 n = int(input("enter the rows: "))
-print(type(n))
+# print(type(n))
 m = 3*n
-print(type(m))
-for i in range(1,n//2):
-    for j in range(m):
-        print("-" * (m//(n*i)))
-    print()
+# print(type(m))
+l1=["-"*(n+3-3*i) +".|."*(i+1)+".|."*i+"-"*(n+3-3*i) for i in range(n//2)]
+l2=["-"*(n+1)+"WELCOME"+"-"*(n+1) for i in range(n) if i==n//2+1]
+print("\n".join(l1+l2+l1[::-1]))
 '''
+n = int(input("enter the rows: "))
+# print(type(n))
+m = 3*n
+# print(type(m))
+l1=["-"*(m//2-1-3*i) +".|."*(i+1)+".|."*i+"-"*(m//2-1-3*i) for i in range(n//2)]
+l2=["-"*((m-5)//2-1)+"WELCOME"+"-"*((m-5)//2-1) for i in range(n) if i==n//2+1]
+print("\n".join(l1+l2+l1[::-1]))

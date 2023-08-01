@@ -617,6 +617,9 @@ print(s.isupper())     # True
 s = 'hello Python'
 print(s.isupper())     # False
 
+s="HELLO 123"
+print(s.isupper())     # True
+
 # 23.join():: returns a concatenated string
 #                   "-".join(str1)-->concatenated string
 #                   hello-->h-e-l-l-o
@@ -632,6 +635,10 @@ print("#".join(s))       # p#y#t#h#o#n
 
 dic = {'hi': 1, 'hello': 2, 'python': 3}
 print("-".join(dic))            # hi-hello-python
+
+s1={'1','2','3','4','5','6','7'}
+p="-#-"
+print(p.join(s1))          # 7-#-2-#-4-#-6-#-5-#-3-#-1
 
 # 24.ljust() :: returns the new string of given length after substituting a given character in the left side of the original string.
 #                   str1.ljust(size,fillchar)-->new string
@@ -1019,40 +1026,63 @@ print(string.split(':',1))     # ['list', 'tuples:set:dict:string']
 string="list,string"
 print(string.split(","))       # ['list','string']
 
-# 45.split():: returns list of string after breaking a given string by specified by separator
-#                    str1.split(separator,max_split)-->list of string
+# 45.len():: it returns an integer which is length of string 
+#                    len(str1)-->integer
 #                      
 
-print("44.---------------split()-----------------")
-print("returns list of string after breaking given string by specified by separator")
+print("45.---------------len()-----------------")
+print(" it returns an integer which is length of the string.")
 
 str1="hello world"
-
-print("Normal string    :",str1)   # hello world
-str1.split()    # no action
-print("string after split:",str1)     # hello world
+print("normal string: ",str1)    # hello world
+len(str1)    # no action
+print("string after len:",str1)   # hello world
 
 # onetime
-print("string after split:",str1.split())    # ['hello','world']
-print("string after split:",str1)     # hello world
+print("length of the string:",len(str1))    # 11
 
-# Assigning to new variable
-str2=str1.split()    # if we want both new,old values
-print("string after the split:",str1)   # hello world
-print("string after the split:",str2)   # ['hello','wolrd']
+# Assigning to another variable 
+c=len(str1)      # if we want both len and string
+print("string after len:",str1)   # hello world
+print("len of the string:",c)     # 11
 
-# Assigning to same 
-str1=str1.split()    # if we don't want old value
-print("string after the split:",str1)    #['hello','world'] 
+# Assigning to same variable
+str1=len(str1)      # if we don't want old value
+print("length of the string:",str1)     # 11
 
-string="CatBatSatFatOr"
-print(string.split('t'))    # ['Ca', 'Ba', 'Sa', 'Fa', 'Or']
+t1=(1,2,3,4,5)
+print(len(t1))     # 5
 
-string="list:tuples:set:dict:string"
-print(string.split(':',3))     # ['list', 'tuples', 'set', 'dict:string']
+l1=[1,2,3,4,5,6]
+print(len(l1))      # 6
 
-string="list:tuples:set:dict:string"
-print(string.split(':',1))     # ['list', 'tuples:set:dict:string']
+dic = {'a':1, 'b': 2}
+print(len(dic))    # 2
+  
+s = { 1, 2, 3, 4}
+print(len(s))      # 4
 
-string="list,string"
-print(string.split(","))       # ['list','string']
+# 46.Concatenation():: combining two strings
+
+print("46.---------------Concatenation()-----------------")
+print(" combining two strings")
+
+# using the ‘+’ Operator
+var1 = "Hello "
+var2 = "good morning"
+ 
+# + Operator is used to combine strings
+var3 = var1 + var2
+print(var3)      # Hello good morning
+
+# using ‘%’ Operator
+var1 = "Good"
+var2 = "Morning" 
+print("% s % s" % (var1, var2))      # Good Morning
+
+# using “, ” comma
+var1 = "Hello"
+var2 = "Good"
+var3 = "Morning" 
+print(var1, var2, var3)      #Hello Good Morning
+
