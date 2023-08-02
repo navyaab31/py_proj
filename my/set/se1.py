@@ -95,7 +95,7 @@ b=set(map(int,input().split()))
 
 s=m.union(b)
 print(len(s))
-'''    
+    
 # Output the total number of students who have subscriptions to both English and French newspapers.
 # Sample Input
 # 9
@@ -109,3 +109,25 @@ b=set(map(int,input().split()))
 
 s=m.intersection(b)
 print(len(s))
+
+# subset
+t=int(input())
+for i in range(t):
+    n=int(input())
+    a=set(map(int,input().split()))
+    m=int(input())
+    b=set(map(int,input().split()))
+    print(a.issubset(b))
+
+'''
+# Print True if set  is a strict superset of all other  sets. Otherwise, print False.
+# Sample Input 0
+# 1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
+# 2
+# 1 2 3 4 5
+# 100 11 12
+n=set(map(int,input().split()))
+m=int(input())
+for i in m:
+    a=set(map(int,input().split()))
+    
