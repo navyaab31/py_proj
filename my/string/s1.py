@@ -273,13 +273,11 @@ print("\n".join(l1+l2+l1[::-1]))
 '''
 # capitalise
 def fun(s):
-    s1=''
-    s=s.split()
-    print(s)
-    for i in s:
-        
-        s1+=i.capitalize()
-        s1+=" "
-    return s1
-    
-print(fun("hello   world  lol"))
+    splitted_list = s.split(" ") 
+    final_string =[]
+
+    for elem in range(len(splitted_list)):
+        final_string.append(splitted_list[elem].capitalize())
+
+    return " ".join(final_string)
+print(fun("hello  world  lol"))

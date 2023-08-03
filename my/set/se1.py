@@ -119,7 +119,7 @@ for i in range(t):
     b=set(map(int,input().split()))
     print(a.issubset(b))
 
-'''
+
 # Print True if set  is a strict superset of all other  sets. Otherwise, print False.
 # Sample Input 0
 # 1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
@@ -131,3 +131,40 @@ m=int(input())
 for i in m:
     a=set(map(int,input().split()))
     
+
+# Output the sum of elements in set .
+# Sample Input
+# 16
+#  1 2 3 4 5 6 7 8 9 10 11 12 13 14 24 52
+#  4
+#  intersection_update 10
+#  2 3 5 6 8 9 1 4 7 11
+#  update 2
+#  55 66
+#  symmetric_difference_update 5
+#  22 7 35 62 58
+#  difference_update 7
+#  11 22 35 55 58 62 66
+n=int(input())
+A=set(map(int,input().split()))
+m=int(input())
+for i in range(m):
+    cmd,length=input().split()
+    set1=set(map(int,input().split()))
+    if cmd=='intersection_update':
+        A.intersection_update(set1)
+    elif cmd=='symmetric_difference_update':
+        A.symmetric_difference_update(set1)
+    elif cmd=='update':
+        A.update(set1)
+    elif cmd== 'difference_update':
+        A.difference_update(set1)
+print(sum(A))
+'''
+# 
+k=int(input())
+list1=input().split()
+# s1=set(list)
+for i in list1:
+    if list1.count(i)==1:
+        print(i)
