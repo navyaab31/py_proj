@@ -160,7 +160,7 @@ for i in range(m):
     elif cmd== 'difference_update':
         A.difference_update(set1)
 print(sum(A))
-'''
+
 # 
 k=int(input())
 list1=input().split()
@@ -168,3 +168,24 @@ list1=input().split()
 for i in list1:
     if list1.count(i)==1:
         print(i)
+
+'''
+# sample input:
+# 1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
+# 2
+# 1 2 3 4 5
+# 100 11 12 
+# False
+a=set(map(int,input().split()))
+n=int(input())
+count=0
+for i in range(n):
+    set1=set(map(int,input().split()))
+    if set1.issubset(a):
+        count+=1
+    # else:
+    #     flag = False
+if count==n:
+    print("True")
+else:
+    print("False")
