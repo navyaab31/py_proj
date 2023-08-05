@@ -29,7 +29,7 @@ else:
         if list1[i]>list1[i+1]:
             list1[i],list1[i+1]=list1[i+1],list[i]
     print(list1)
-"""
+# 
 list1=[1,2,5,3,7,6,8]
 for i in range(len(list1)):
         print(list1[i],type(list1[i]))
@@ -37,3 +37,10 @@ for i in range(len(list1)):
         if list1[i]>list1[i+1]:
             list1[i],list1[i+1]=list1[i+1],list[i]
 print(list1)
+"""
+# 
+message = 'Hello 123'  # static way
+# message = input("Enter any string : ")
+old="123"
+new="python"
+print(message.replace("123","python"))

@@ -142,4 +142,6 @@ for i in my_dict:
 dict = {'hg': 10, 'is': 15, 'be': 20, 'for': 10, 'hi': 20}
 d1={}
 for i in dict:
-    
+    if dict[i] not in d1:
+        d1[i]=dict[i]
+print(d1)
