@@ -1,6 +1,6 @@
-# Substring replacement
+# Reverse each word in given string Input
 
-'''REQ: substring replacement'''
+'''REQ: Reverse each word in given string input'''
 
 '''
 SDLC Phases:
@@ -15,10 +15,10 @@ SDLC Phases:
     VI. DEPLOYMENT/PRODUCTION
     
 
-I. REQUIREMENT GATHERING : substring replcement. 
+I. REQUIREMENT GATHERING : reverse each word in given string input. 
         ------------------------------------
         |    Enter String: |_________|      |
-        | new:|_______|   old:|_______|     |
+        |                                   |
         |            Submit                 |
         |___________________________________|
         
@@ -29,12 +29,12 @@ II. ANALYSIS:
     Notes: Customer will give a string which can contain any  characters
            like numbers, alphabets, special symbols etc., and 
            It might have only one word or full statement or it can be multi line statement.
-           we get old and new substring to replace
+           reverse each world in the string 
            Once he clicks on Submit button, diaplay string.
            
     Scenarios:     Empty string    Ex: ""    : "Invalid String"
                 i. Single char     Ex: "H"   : "Enter at least 2 characters"
-               ii. Single word     Ex: "Hello" : "you have enter the multiple lines"
+               ii. Single word     Ex: "Hello" : "display the reverse string"
               iii. Multiple words  Ex: "Hello World Welcome to Python"
                iv. Comb of chars   Ex: "Hello1234%^&%$!bangalore"
                 v. Multiline string Ex:  "hello world, bangalore, python 
@@ -62,13 +62,12 @@ Mathematics:                       Programming Language:
                                   STATE:
                                   ------
 1. Write it on paper              1. Define string 
-   str1=hello123                        str1=hello123
-old=123   new="python"              old=123   new="python" 
+   str1=hello python                        str1=hello123
 
                                   BEHAVIOR:
                                   ----------
-2. search for old string        2. use the for loop to itirate string  
-3. replace that with new one    3. get the old string replce with new string
+2. take each word in string     2. use the for loop to itirate string  
+3. reverse the word             3. get each word reverse 
 4. display string to user       4. display string to user
          
 '''
@@ -87,11 +86,9 @@ IV. DEVELOPMENT:
 
 print("-----1. Builtin Functions--------")
 
-message = 'Hello 123'  # static way
+message = 'Hello python'  # static way
 # message = input("Enter any string : ")
-old="123"
-new="python"
-print("modified string is:",message.replace(old,new))
+# no built-in method
 
 
 # 2. Algorithm ***
@@ -106,9 +103,16 @@ if message=="":
 elif len(message)==1:
     print("string length is more than one")
 else:
-    for i in range(len(message)):
-        if s[i]+s[i+1]+s[i+2]=="ijk":
-            print(s[:i:]+"abc"+s[i+3::])
+    message = 'Hello python'.split()  # static way
+    s1=" "
+    l=[]
+    for i in message:
+        for j in i[::-1]:
+            s1+=j
+        l.append(s1)
+        s1=''
+    print(" ".join(l))
+    
 # print(s)
 
 # 3 Using Functions  ==>   40
@@ -123,4 +127,3 @@ print("--------6 File Handling----------")
 print("--------7 Database interaction----------")
 # 8 UI Interaction   ==> 3
 print("--------8 UI Interaction----------")
-

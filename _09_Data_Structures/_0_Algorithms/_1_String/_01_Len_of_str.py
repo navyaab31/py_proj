@@ -69,7 +69,7 @@ Mathematics:                       Programming Language:
 '''
 
 
-'''
+"""
 IV. DEVELOPMENT:
 =================
         1. Builtin Functions
@@ -77,7 +77,7 @@ IV. DEVELOPMENT:
         3. Functions  : 40
         4.OOPS        : 20     5. EH  : 10    6. FH  : 5       
         7.Database    : 3      8. UI  : 3
-'''
+"""
     # 1.Builtin functions
 
 print("-----1. Builtin Functions--------")
