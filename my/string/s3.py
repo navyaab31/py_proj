@@ -39,8 +39,9 @@ for i in range(len(list1)):
 print(list1)
 """
 # 
-message = 'Hello 123'  # static way
-# message = input("Enter any string : ")
-old="123"
-new="python"
-print(message.replace("123","python"))
+l1=[7,6,1,2,8,3,4]
+mn=l1[0]
+for i in l1:
+    if mn>i:
+        mn=i
+print(mn)
